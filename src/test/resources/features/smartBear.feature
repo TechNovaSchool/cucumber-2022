@@ -16,5 +16,5 @@ Feature: SmartBear login feature verifications
     When User is on SmartBear login page
     And User enters correct username2
     And User enters correct password
-    And User clicks to login button
-    Then User should be logged in and be able to verify Welcome text is displayed
+    And User clicks to login bu tton
+    Then User should be logged in and be a ble to verify Welcome text is displayed

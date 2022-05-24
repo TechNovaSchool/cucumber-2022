@@ -6,10 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+    plugin = {"html:target/cucumber-report.html"},
     features = "src/test/resources/features",
     glue = "steps",
-        dryRun = true,
-        tags = "@positiveLoginSB"
+        dryRun = false,
+        tags = "@amazon"
 )
 
 

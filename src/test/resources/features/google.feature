@@ -8,7 +8,7 @@ Feature: Google feature test verification
   Scenario: Google title verification
     Given I am at google home page
     When I verify the title is Google
-
+@google
   Scenario: Google search test
     Given I am at google home page
     When I search for dark web
