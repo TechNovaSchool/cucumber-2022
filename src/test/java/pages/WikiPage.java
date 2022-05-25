@@ -13,4 +13,13 @@ public class WikiPage {
 
     @FindBy (xpath = "//input[@id=\"searchInput\"]")
     public WebElement searchBox;
+
+    @FindBy (xpath = "//h1[@id=\"firstHeading\"]")
+    public WebElement headerTitle;
+
+    @FindBy (xpath = "//input[@id=\"searchButton\"]")
+    public WebElement searchBtn;
+
+    @FindBy (xpath = "//div[@class=\"fn\"]")
+    public WebElement imageHeader;
 }
