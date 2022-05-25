@@ -4,7 +4,7 @@ Feature: Google feature test verification
   Here we can add some details about the test
   #to comments
   #Given, When, Then, And
-
+  @google
   Scenario: Google title verification
     Given I am at google home page
     When I verify the title is Google

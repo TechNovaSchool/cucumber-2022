@@ -16,6 +16,10 @@ public class Driver {
 
     private static WebDriver driver;
 
+    public static WebDriver getReference() {
+        return driver;
+    }
+
     public static WebDriver getDriver() {
         if(driver == null) {
             switch (Config.getProperty("browser")) {
@@ -42,6 +46,7 @@ public class Driver {
     public static void closeDriver() {
         if(driver !=null){
             driver.quit();
+            driver = null;
         }
     }
 

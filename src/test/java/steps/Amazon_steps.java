@@ -15,7 +15,6 @@ public class Amazon_steps {
     @Given("I am at amazon application")
     public void i_am_at_amazon_application() {
         Driver.getDriver().get("https://www.amazon.com");
-
     }
     @When("I search for apple watch")
     public void i_search_for_apple_watch() {
@@ -33,7 +32,7 @@ public class Amazon_steps {
     }
     @Then("I verify the title contains apple watch")
     public void i_verify_the_title_contains_apple_watch() {
-    Assert.assertTrue(amazonPage.titleOfProduct.getText().toLowerCase().contains(searchValue));
+    Assert.assertTrue(amazonPage.titleOfProduct.getText().contains(searchValue));
     }
     @Then("I add product the the cart")
     public void i_add_product_the_the_cart() {
