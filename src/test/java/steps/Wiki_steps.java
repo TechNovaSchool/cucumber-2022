@@ -39,4 +39,24 @@ public class Wiki_steps {
 
     }
 
+    @When("User type {string} in the wiki search box")
+    public void user_type_in_the_wiki_search_box(String str) {
+       wikiPage.searchBox.sendKeys(str);
+    }
+    @Then("User see {string} in the wiki page title")
+    public void user_see_in_the_wiki_page_title(String name) {
+        Assert.assertTrue(Driver.getDriver().getTitle().contains(name));
+    }
+
+    @Then("User see {string} in the main header")
+    public void user_see_in_the_main_header(String string) {
+        Assert.assertEquals(wikiPage.headerTitle.getText(), string);
+    }
+
+    @Then("User see {string} in the image header")
+    public void user_see_in_the_image_header(String string) {
+        Assert.assertEquals(wikiPage.imageHeader.getText(), string);
+
+    }
+
 }
