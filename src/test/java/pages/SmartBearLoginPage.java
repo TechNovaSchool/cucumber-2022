@@ -20,4 +20,5 @@ public class SmartBearLoginPage {
     @FindBy (xpath = "//input[@id=\"ctl00_MainContent_login_button\"]")
     public WebElement loginButton;
 
+
 }
