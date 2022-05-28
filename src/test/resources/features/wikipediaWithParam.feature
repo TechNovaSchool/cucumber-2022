@@ -8,6 +8,14 @@ Feature: Wikipedia search functionality
     And User click search button
     Then User see "Mohamed Salah" in the wiki page title
 
+
+
+
+
+
+
+
+
 # --- ctrl+/
 @wikiDynamicTest2
   Scenario: Wikipedia Search Functionality page header
