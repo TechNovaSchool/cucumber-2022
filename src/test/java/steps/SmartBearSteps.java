@@ -80,8 +80,11 @@ public class SmartBearSteps {
         order.processButton.click();
     }
     @Then("User verifies {string} is in the table")
-    public void user_verifies_is_in_the_table(String string) {
+    public void user_verifies_is_in_the_table(String expectedName) {
+        order.viewAllOrders.click();
+        String actualName = order.nameInTable.getText();
 
+        Assert.assertEquals(actualName,expectedName);
     }
 
 }

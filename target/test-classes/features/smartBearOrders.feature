@@ -20,6 +20,6 @@ Feature: Verify smart bear orders page
     Examples:
       | product     | quantity | customerName | streetName   | city     | state | zip   | cardType         | cardNumber       | expirationDate | expectedName |
       | MyMoney     | 1        | Kamol        | 852 Road     | Chicago  | IL    | 12345 | MasterCard       | 1234123412341234 | 05/22          | Kamol        |
-#    | FamilyAlbum | 2        | Andrew       | 741 Drive    | New York | NY    | 12345 | Visa             | 1234123412341234 | 05/22          | Andrew       |
-#    | ScreenSaver | 3        | Karina       | 456 Driveway | Miami    | FL    | 12345 | American Express | 1234123412341234 | 05/22          | Karina       |
+    | FamilyAlbum | 2        | Andrew       | 741 Drive    | New York | NY    | 12345 | Visa             | 1234123412341234 | 05/22          | Andrew       |
+    | ScreenSaver | 3        | Karina       | 456 Driveway | Miami    | FL    | 12345 | American Express | 1234123412341234 | 05/22          | Karina       |
 
