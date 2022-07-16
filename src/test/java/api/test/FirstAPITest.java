@@ -21,7 +21,7 @@ public class FirstAPITest {
         JsonPath jsonPath = response.jsonPath();
         int size = jsonPath.getList("").size();
         System.out.println(size);
-//        String str = jsonPath.get("[1].name");
+       String str = jsonPath.get("[1].name");
 //        System.out.println(str);
 
         for (int i = 0; i < size; i++) {

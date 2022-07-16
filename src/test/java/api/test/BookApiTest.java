@@ -1,7 +1,7 @@
 package api.test;
 
-import api.models.BookRecords;
-import api.models.OrderBook;
+import api.models.book.BookRecords;
+import api.models.book.OrderBook;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
