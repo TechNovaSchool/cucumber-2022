@@ -84,13 +84,41 @@ public class AirtableTests {
         System.out.println(jsonValue);
 
 
-
         Response response = RestAssured.given()
                 .header("Authorization", "Bearer keyUciDKN0atCXT7w")
                 .urlEncodingEnabled(false)
                 .contentType("application/json")
                 .body(jsonValue)
                 .post(Config.getProperty("host"));
+        System.out.println(response.statusCode());
+
+    }
+
+    @Test
+    public void updateRecord() throws JsonProcessingException {
+        MyFields fields = new MyFields();
+        fields.setName("JamesBond");
+
+        Record record = new Record();
+        record.setFields(fields);
+        record.setId("recbxWmbMxmAxKWS1");
+
+        List<Record> records = new ArrayList<>();
+        records.add(record);
+
+        RequestBody requestBody = new RequestBody();
+        requestBody.setRecords(records);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonValue = objectMapper.writeValueAsString(requestBody);
+        System.out.println(jsonValue);
+
+        Response response = RestAssured.given()
+                .header("Authorization", "Bearer keyUciDKN0atCXT7w")
+                .urlEncodingEnabled(false)
+                .contentType("application/json")
+                .body(jsonValue)
+                .patch(Config.getProperty("host"));
         System.out.println(response.statusCode());
 
     }
