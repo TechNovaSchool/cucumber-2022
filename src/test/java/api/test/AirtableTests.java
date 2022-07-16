@@ -1,5 +1,6 @@
 package api.test;
 
+import api.models.Record;
 import api.models.ResponseBody;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
@@ -12,7 +13,7 @@ public class AirtableTests {
     @Test
     public void getRecord() throws Exception {
         Response response = RestAssured.given()
-                .header("Authorization","Bearer keyUciDKN0atCXT7w")
+                .header("Authorization", "Bearer keyUciDKN0atCXT7w")
                 .urlEncodingEnabled(false)
                 .get(Config.getProperty("host"));
         System.out.println(response.statusCode());
@@ -25,20 +26,32 @@ public class AirtableTests {
         int size = rb.getRecords().size();
         System.out.println(size);
 
-        for (int i =0; i< size; i++) {
-            String name = rb.getRecords().get(i).getFields().getName();
-            if (name.charAt(0) == 'A') {
-                System.out.println(rb.getRecords().get(i).getFields().getName() + " "
-                        +" "+rb.getRecords().get(i).getFields().getAddress()
-                        +" " +rb.getRecords().get(i).getFields().getNotes()
-                        +" " +rb.getRecords().get(i).getFields().getPhone()
-                        +" " +rb.getRecords().get(i).getFields().getEmail()
+        for (Record elements : rb.getRecords()) {
+            if (elements.getFields().getName().startsWith("A")) {
+                System.out.println(elements.getFields().getName()
+                        + " " + elements.getFields().getAddress()
+                        + " " + elements.getFields().getPhone()
+                        + " " + elements.getFields().getNotes()
+                        + " " + elements.getFields().getEmail()
 
                 );
 
             }
         }
 
-        
+
+//        for (int i =0; i< size; i++) {
+//            String name = rb.getRecords().get(i).getFields().getName();
+//            if (name.charAt(0) == 'A') {
+//                System.out.println(rb.getRecords().get(i).getFields().getName() + " "
+//                        +" "+rb.getRecords().get(i).getFields().getAddress()
+//                        +" " +rb.getRecords().get(i).getFields().getNotes()
+//                        +" " +rb.getRecords().get(i).getFields().getPhone()
+//                        +" " +rb.getRecords().get(i).getFields().getEmail()
+//                );
+//            }
+//        }
+
+
     }
 }
