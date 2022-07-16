@@ -29,7 +29,7 @@ public class AirtableTests {
             String name = rb.getRecords().get(i).getFields().getName();
             if (name.charAt(0) == 'A') {
                 System.out.println(rb.getRecords().get(i).getFields().getName() + " "
-                        + " " +rb.getRecords().get(i).getFields().getAddress()
+                        +" "+rb.getRecords().get(i).getFields().getAddress()
                         +" " +rb.getRecords().get(i).getFields().getNotes()
                         +" " +rb.getRecords().get(i).getFields().getPhone()
                         +" " +rb.getRecords().get(i).getFields().getEmail()
@@ -39,7 +39,6 @@ public class AirtableTests {
             }
         }
 
-
-
+        
     }
 }
