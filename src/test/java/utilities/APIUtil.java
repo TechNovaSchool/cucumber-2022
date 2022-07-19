@@ -15,6 +15,14 @@ public class APIUtil {
     private static Response response;
     private static ResponseBody responseBody;
 
+    public static ResponseBody getResponseBody() {
+        return responseBody;
+    }
+
+    public static Response getResponse() {
+        return response;
+    }
+
 
     public static void hitGET(String resource) {
         String uri = Config.getProperty("host") + resource;

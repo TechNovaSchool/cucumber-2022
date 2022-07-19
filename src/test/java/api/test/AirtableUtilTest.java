@@ -10,14 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AirtableUtilTest {
+    String myRecord;
 
-    @Test
+    @Test (priority = 1)
     public void testGetMethod() {
         String resource = "/Table%201";
         APIUtil.hitGET(resource);
     }
 
-    @Test
+    @Test (priority = 2)
     public void testPostMethod() {
         String resource = "/Table%201";
 
@@ -38,9 +39,13 @@ public class AirtableUtilTest {
 
         APIUtil.hitPOST(resource,requestBody);
 
+        myRecord = APIUtil.getResponseBody().getRecords().get(0).getId();
+//        System.out.println(myRecord);
+
+
     }
 
-    @Test
+    @Test (priority = 3)
     public void testPatchMethod() {
         String resource = "/Table%201";
 
@@ -50,7 +55,7 @@ public class AirtableUtilTest {
 
         Record record = new Record();
         record.setFields(fields);
-        record.setId("rec1d7bo6H1wZVrBx");
+        record.setId(myRecord);
         List<Record> records = new ArrayList<>();
         records.add(record);
         RequestBody requestBody = new RequestBody();
@@ -59,10 +64,10 @@ public class AirtableUtilTest {
         APIUtil.hitPATCH(resource,requestBody);
     }
 
-    @Test
+    @Test (priority = 4)
     public void testDeleteMethod() {
         String resource = "/Table%201";
-        String recordToBeDeleted = "rec7GIQcQ697wgajW";
+        String recordToBeDeleted = myRecord;
         APIUtil.hitDELETE(resource,recordToBeDeleted);
     }
 
