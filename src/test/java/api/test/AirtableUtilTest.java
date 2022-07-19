@@ -37,5 +37,33 @@ public class AirtableUtilTest {
         requestBody.setRecords(records);
 
         APIUtil.hitPOST(resource,requestBody);
+
     }
+
+    @Test
+    public void testPatchMethod() {
+        String resource = "/Table%201";
+
+        MyFields fields = new MyFields();
+//        fields.setName("Mika");
+        fields.setEmail("test111@gmail.com");
+
+        Record record = new Record();
+        record.setFields(fields);
+        record.setId("rec1d7bo6H1wZVrBx");
+        List<Record> records = new ArrayList<>();
+        records.add(record);
+        RequestBody requestBody = new RequestBody();
+        requestBody.setRecords(records);
+
+        APIUtil.hitPATCH(resource,requestBody);
+    }
+
+    @Test
+    public void testDeleteMethod() {
+        String resource = "/Table%201";
+        String recordToBeDeleted = "rec7GIQcQ697wgajW";
+        APIUtil.hitDELETE(resource,recordToBeDeleted);
+    }
+
 }
