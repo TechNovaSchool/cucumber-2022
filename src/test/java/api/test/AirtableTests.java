@@ -72,6 +72,7 @@ public class AirtableTests {
         fields.setAddress("985 road");
         fields.setNotes("these are my notes");
         fields.setPhone("123-123-4569");
+        fields.setCheckBox(false);
 
         Record record = new Record();
         record.setFields(fields);

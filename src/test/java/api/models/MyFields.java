@@ -11,4 +11,5 @@ public class MyFields {
     String phone;
     String notes;
     String email;
+    boolean checkBox;
 }
