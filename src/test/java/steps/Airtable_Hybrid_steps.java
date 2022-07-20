@@ -35,6 +35,6 @@ public class Airtable_Hybrid_steps {
     }
     @Then("I will check with API that record was saved")
     public void i_will_check_with_api_that_record_was_saved() {
-       
+
     }
 }
