@@ -1,5 +1,6 @@
 package steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -24,4 +25,9 @@ public class Airtable_steps {
         Assert.assertEquals(statusCode,APIUtil.getResponse().statusCode() );
     }
 
+    @And("I verify the name of first record to be {string}")
+    public void iVerifyTheNameOfFirstRecordToBe(String name) {
+        String actualName = APIUtil.getResponseBody().getRecords().get(0).getFields().getName();
+        Assert.assertEquals(name,actualName);
+    }
 }
