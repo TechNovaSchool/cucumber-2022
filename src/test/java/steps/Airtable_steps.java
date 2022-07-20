@@ -92,8 +92,26 @@ public class Airtable_steps {
     @Then("I delete the record")
     public void i_delete_the_record() {
         APIUtil.hitDELETE(resource, myRecord);
-
     }
 
 
+    @When("I create a record with a wrong jsonBody")
+    public void iCreateARecordWithAWrongJsonBody() {
+//        MyFields fields = new MyFields();
+//        fields.setName("MAX");
+//        fields.setEmail("test@gmail.com");
+//        fields.setAddress();
+//        fields.setNotes("these are my notes");
+//        fields.setPhone("123-123-4569");
+//        fields.setCheckBox(false);
+
+//        Record record = new Record();
+//        record.setFields(fields);
+//        List<Record> records = new ArrayList<>();
+//        records.add(record);
+       RequestBody requestBody = new RequestBody();
+//        requestBody.setRecords(records);
+
+        APIUtil.hitPOST(resource,requestBody);
+    }
 }

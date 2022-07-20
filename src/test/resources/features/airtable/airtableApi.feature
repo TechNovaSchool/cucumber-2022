@@ -14,3 +14,9 @@ Feature: Airtable API Test
     And I check status code is 200
     And I delete the record
     And I check status code is 200
+
+  @apiNegative
+  Scenario: Negative test
+    When I create a record with a wrong jsonBody
+    And I check status code is 422
+
