@@ -12,10 +12,21 @@ public class AirtableLoginPage {
     }
 
     @FindBy (xpath = "//a[.='Sign in']")
-    public WebElement signInButton;
+    public WebElement signInReference;
 
     @FindBy (css = "#emailLogin")
     public WebElement login;
+
+    @FindBy (css = "#passwordLogin")
+    public WebElement passwordLogin;
+
+    @FindBy (xpath = "//button[.='Sign in']")
+    public WebElement signInButton;
+
+    @FindBy (xpath = "(//div[@role=\"listitem\"])[2]")
+    public WebElement getTransformersTable;
+
+
 
 
 
