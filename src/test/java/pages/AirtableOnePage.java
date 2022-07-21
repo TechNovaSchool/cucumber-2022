@@ -14,5 +14,8 @@ public class AirtableOnePage {
     @FindBy (xpath = "//div[@data-tutorial-selector-id=\"ghostRowLeftPane\"]")
     public WebElement plusSign;
 
+    @FindBy (xpath = "//h2")
+    public WebElement workSpaceName;
+
 
 }
